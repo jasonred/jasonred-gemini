@@ -1,7 +1,7 @@
 
 import type React from 'react';
 import type { View } from '../types';
-import { FeedIcon, SendIcon, MilestoneIcon, WebhookIcon } from '../constants';
+import { FeedIcon, SendIcon, MilestoneIcon, AdminIcon } from '../constants';
 
 interface SidebarProps {
   currentView: View;
@@ -21,6 +21,7 @@ const NavItem: React.FC<{
         ? 'text-white bg-blue-600'
         : 'text-gray-600 hover:bg-gray-200'
     }`}
+    aria-current={isActive ? 'page' : undefined}
   >
     <Icon className="w-6 h-6 mr-3" />
     <span>{label}</span>
@@ -53,10 +54,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentView, setCurrentView })
           onClick={() => setCurrentView('milestones')}
         />
         <NavItem
-          icon={WebhookIcon}
-          label="Webhooks"
-          isActive={currentView === 'webhooks'}
-          onClick={() => setCurrentView('webhooks')}
+          icon={AdminIcon}
+          label="Admin Settings"
+          isActive={currentView === 'admin'}
+          onClick={() => setCurrentView('admin')}
         />
       </nav>
     </aside>

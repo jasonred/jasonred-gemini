@@ -4,7 +4,7 @@ import { Sidebar } from './components/Sidebar';
 import { RecognitionFeed } from './components/RecognitionFeed';
 import { SendRecognition } from './components/SendRecognition';
 import { Milestones } from './components/Milestones';
-import { WebhookManager } from './components/WebhookManager';
+import { AdminSettings } from './components/AdminSettings';
 import { AppProvider } from './context/AppContext';
 import type { View } from './types';
 
@@ -19,8 +19,8 @@ function App() {
         return <SendRecognition />;
       case 'milestones':
         return <Milestones />;
-      case 'webhooks':
-        return <WebhookManager />;
+      case 'admin':
+        return <AdminSettings />;
       default:
         return <RecognitionFeed />;
     }

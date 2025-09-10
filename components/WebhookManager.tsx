@@ -45,17 +45,17 @@ export const WebhookManager: React.FC = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto">
+        <div>
              {toast && (
                 <div className="fixed top-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg animate-bounce">
                 {toast}
                 </div>
             )}
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Webhook Integrations</h1>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Webhook Integrations</h2>
             <p className="text-gray-600 mb-6">Connect Kudos to other services. We'll send a POST request with the recognition data to your configured URLs.</p>
             
             <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-                <h2 className="text-xl font-semibold mb-4">Add New Webhook</h2>
+                <h3 className="text-xl font-semibold mb-4">Add New Webhook</h3>
                 <form onSubmit={handleAddWebhook} className="flex items-start space-x-2">
                     <div className="flex-grow">
                         <input 
@@ -74,7 +74,7 @@ export const WebhookManager: React.FC = () => {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-xl font-semibold mb-4">Configured Webhooks</h2>
+                <h3 className="text-xl font-semibold mb-4">Configured Webhooks</h3>
                 <div className="space-y-3">
                     {state.webhooks.length > 0 ? (
                         state.webhooks.map(webhook => (

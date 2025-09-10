@@ -1,11 +1,12 @@
 
 import type React from 'react';
 
-export type View = 'feed' | 'send' | 'milestones' | 'webhooks';
+export type View = 'feed' | 'send' | 'milestones' | 'admin';
 
 export interface User {
   id: string;
   name: string;
+  email: string;
   avatarUrl: string;
   points: number;
 }
@@ -43,7 +44,7 @@ export interface Milestone {
 }
 
 export interface Webhook {
-  id: string;
+  id:string;
   url: string;
 }
 
@@ -52,12 +53,14 @@ export interface AppState {
   milestones: Milestone[];
   webhooks: Webhook[];
   currentUser: User;
+  users: User[];
 }
 
 export type AppAction =
   | { type: 'ADD_RECOGNITION'; payload: Recognition }
   | { type: 'ADD_WEBHOOK'; payload: Webhook }
-  | { type: 'DELETE_WEBHOOK'; payload: string };
+  | { type: 'DELETE_WEBHOOK'; payload: string }
+  | { type: 'DELETE_USER'; payload: string };
 
 export interface AppContextType {
   state: AppState;

@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { USERS, BADGES, ECARDS } from '../constants';
+import { BADGES, ECARDS } from '../constants';
 import type { User, Badge, ECard } from '../types';
 import { generateRecognitionMessage } from '../services/geminiService';
 
@@ -17,7 +17,7 @@ export const SendRecognition: React.FC = () => {
   const [error, setError] = useState('');
   const [toast, setToast] = useState('');
 
-  const availableUsers = USERS.filter(u => u.id !== state.currentUser.id);
+  const availableUsers = state.users.filter(u => u.id !== state.currentUser.id);
 
   const handleGenerateMessage = useCallback(async () => {
     if (!reason || !recipient) {
@@ -86,7 +86,8 @@ export const SendRecognition: React.FC = () => {
           <select 
             className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             value={recipient?.id || ''}
-            onChange={(e) => setRecipient(USERS.find(u => u.id === e.target.value) || null)}
+            onChange={(e) => setRecipient(state.users.find(u => u.id === e.target.value) || null)}
+            required
           >
             <option value="" disabled>Select a colleague</option>
             {availableUsers.map(user => <option key={user.id} value={user.id}>{user.name}</option>)}
@@ -128,6 +129,7 @@ export const SendRecognition: React.FC = () => {
             placeholder="Your recognition message..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            required
           ></textarea>
         </div>
 

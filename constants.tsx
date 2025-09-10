@@ -15,6 +15,9 @@ export const MilestoneIcon: React.FC<{ className?: string }> = ({ className }) =
 export const WebhookIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}><path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
 );
+export const AdminIcon: React.FC<{ className?: string }> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" /></svg>
+);
 export const TeamPlayerIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}><path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962c.57-1.023.995-2.132 1.254-3.336A3 3 0 0010.5 5.514a3 3 0 00-3.232-2.585 3 3 0 00-3.232 2.585 3 3 0 001.254 3.336L6 18.72m12 0a9.094 9.094 0 01-3.741-.479 3 3 0 01-4.682-2.72M6 18.72V21a2.25 2.25 0 002.25 2.25h1.5a2.25 2.25 0 002.25-2.25v-2.28m-4.5 0A3.75 3.75 0 006 15h12a3.75 3.75 0 003.75 3.72M6 18.72A3.75 3.75 0 012.25 15m13.5 0a3.75 3.75 0 00-3.75-3.72m-9.75 0A3.75 3.75 0 016 11.25v-1.5a3.75 3.75 0 00-3.75-3.75v1.5a3.75 3.75 0 013.75 3.75m6 0v-1.5a3.75 3.75 0 00-3.75-3.75v1.5a3.75 3.75 0 013.75 3.75m-3.75 0h.008v.008h-.008v-.008z" /></svg>
 );
@@ -30,11 +33,11 @@ export const ProblemSolverIcon: React.FC<{ className?: string }> = ({ className 
 
 // Mock Data
 export const USERS: User[] = [
-  { id: 'u1', name: 'Alice Johnson', avatarUrl: 'https://picsum.photos/id/1011/100/100', points: 1250 },
-  { id: 'u2', name: 'Bob Williams', avatarUrl: 'https://picsum.photos/id/1005/100/100', points: 800 },
-  { id: 'u3', name: 'Charlie Brown', avatarUrl: 'https://picsum.photos/id/1025/100/100', points: 1500 },
-  { id: 'u4', name: 'Diana Miller', avatarUrl: 'https://picsum.photos/id/1027/100/100', points: 950 },
-  { id: 'u5', name: 'Ethan Davis', avatarUrl: 'https://picsum.photos/id/237/100/100', points: 2100 },
+  { id: 'u1', name: 'Alice Johnson', email: 'alice.j@example.com', avatarUrl: 'https://picsum.photos/id/1011/100/100', points: 1250 },
+  { id: 'u2', name: 'Bob Williams', email: 'bob.w@example.com', avatarUrl: 'https://picsum.photos/id/1005/100/100', points: 800 },
+  { id: 'u3', name: 'Charlie Brown', email: 'charlie.b@example.com', avatarUrl: 'https://picsum.photos/id/1025/100/100', points: 1500 },
+  { id: 'u4', name: 'Diana Miller', email: 'diana.m@example.com', avatarUrl: 'https://picsum.photos/id/1027/100/100', points: 950 },
+  { id: 'u5', name: 'Ethan Davis', email: 'ethan.d@example.com', avatarUrl: 'https://picsum.photos/id/237/100/100', points: 2100 },
 ];
 
 export const CURRENT_USER = USERS[0];
