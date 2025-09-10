@@ -1,0 +1,5 @@
+{
+  "name": "Kudos - Recognition Platform",
+  "description": "A modern platform for peer-to-peer recognition, celebrating milestones, and fostering a positive work culture. Features include sending eCards, awarding points and badges, and integrating with third-party services via webhooks.",
+  "requestFramePermissions": []
+}
